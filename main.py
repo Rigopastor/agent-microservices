@@ -132,3 +132,15 @@ async def get_metadata(req: UrlRequest):
         raise HTTPException(status_code=504, detail="Timeout al obtener metadata")
     except Exception as e:
         raise HTTPException(status_code=502, detail=str(e))
+
+@app.get("/uptime")
+def uptime_ready():
+    return {"status": "ready", "service": "uptime", "method": "POST with body {\"url\": \"https://example.com\"}"}
+
+@app.get("/ssl")
+def ssl_ready():
+    return {"status": "ready", "service": "ssl", "method": "POST with body {\"url\": \"https://example.com\"}"}
+
+@app.get("/metadata")
+def metadata_ready():
+    return {"status": "ready", "service": "metadata", "method": "POST with body {\"url\": \"https://example.com\"}"}
