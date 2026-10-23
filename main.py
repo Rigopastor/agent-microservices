@@ -51,6 +51,8 @@ def x402_challenge(service: str) -> JSONResponse:
                 "payTo": PAY_TO,
                 "maxTimeoutSeconds": 300,
                 "extra": {
+                    "name": "USD Coin",
+                    "version": "2",
                     "service": service,
                     "price_usdc": amount / 1_000_000,
                 },
